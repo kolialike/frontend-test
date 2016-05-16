@@ -1,0 +1,96 @@
+.menu-navigation
+	border-bottom: 2px solid #c5bfbd
+	margin-bottom: 15px
+	position: relative
+	margin-top: 51px
+	+breakpoint($break-767)
+		margin: 20px 0px
+		height: 36px
+		overflow: hidden
+		border-top: 2px solid #c5bfbd
+		&:after
+			content: ""
+			position: absolute
+			top: 10px
+			right: 0px
+			background: #83807f
+			z-index: 2
+			width: 15px
+			height: 3px
+			box-shadow: 0 6px 0 #83807f, 0 12px 0 #83807f
+			display: block
+	&.menu-navigation-open
+		+breakpoint($break-767)
+			height: auto
+			a 
+				position: relative
+
+	ul 
+		display: block
+		text-align: justify
+		+breakpoint($break-1023)
+			text-align: center
+		+breakpoint($break-767)
+			text-align: left
+		&:after
+			content: ""
+			display: inline-block
+			text-align: justify
+			width: 100%
+			height: 0
+			+breakpoint($break-767)
+				display: none
+	li 
+		display: inline-block
+		+box-sizing(border-box)
+		+breakpoint($break-767)
+			display: block
+	a 
+		position: relative
+		padding: 0px 26px
+		color: #83807f
+		font-size: 16px
+		line-height: 17px
+		text-transform: uppercase
+		+transition(0.3s)
+		letter-spacing: 0.9px
+		font-weight: bold
+		display: inline-block
+		font-style: normal
+		+breakpoint($break-1023)
+			padding: 0 8px
+		+breakpoint($break-767)
+			display: block
+			padding: 10px 0px
+			background: #fff
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			z-index: 0
+			+box-sizing(border-box)
+		&:after
+			content: ""
+			width: 0
+			height: 2px
+			background: #2e1e1f
+			position: absolute
+			z-index: 10
+			display: inline-block
+			bottom: -18px
+			left: 0
+			+transition(0.2s)
+			+breakpoint($break-767)
+				display: none
+
+		&:hover
+			color: #1a1415
+			&:after
+				width: 100%
+		&.active
+			color: #1a1415
+			&:after
+				width: 100%
+			+breakpoint($break-767)
+				z-index: 1
+

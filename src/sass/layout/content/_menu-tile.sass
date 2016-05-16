@@ -1,0 +1,207 @@
+.menu-tile-list
+	text-align: center
+	a 
+		width: 23px
+		height: 23px
+		position: relative
+		display: inline-block
+		margin: 2px 7px 13px 8px
+		+transition(0.3s)
+		background-repeat: no-repeat
+	a[href="#menu-tile"]
+		&:before 
+			content: ""
+			+transition(0.3s)
+			position: absolute
+			top: 0px
+			left: 0px
+			background: #b5b2ad
+			z-index: 2
+			width: 10px
+			height: 10px
+			box-shadow: 13px 0 0 #b5b2ad, 0 13px 0 #b5b2ad, 13px 13px 0 #b5b2ad
+			display: block
+		&.active, &:hover
+			&:before
+				background: #69b540
+				box-shadow: 13px 0 0 #69b540, 0 13px 0 #69b540, 13px 13px 0 #69b540
+	a[href="#menu-list"]
+		&:before 
+			content: ""
+			+transition(0.3s)
+			position: absolute
+			top: 0px
+			left: 0px
+			background: #b5b2ad
+			z-index: 2
+			width: 5px
+			height: 5px
+			box-shadow: 0 9px 0 #b5b2ad, 0 18px 0 #b5b2ad
+			display: block
+		&:after 
+			content: ""
+			+transition(0.3s)
+			position: absolute
+			top: 0px
+			left: 7px
+			background: #b5b2ad
+			z-index: 2
+			width: 16px
+			height: 5px
+			box-shadow: 0px 9px 0 #b5b2ad, 0px 18px 0 #b5b2ad
+			display: block
+		&.active, &:hover
+			&:before
+				background: #69b540
+				box-shadow: 0 9px 0 #69b540, 0 18px 0 #69b540
+			&:after 
+				background: #69b540
+				box-shadow: 0px 9px 0 #69b540, 0px 18px 0 #69b540
+.menu-tile
+	font-size: 0
+	line-height: 0
+	text-align: center
+	width: 0
+	height: 0
+	overflow: hidden
+	+opacity(0)
+	+transition(0.5s opacity)
+	&.open
+		width: 100%
+		height: auto
+		+opacity(1)
+	.menu-item
+		width: 380/1180*100%
+		margin-left: 20/1180*100%
+		display: inline-block
+		vertical-align: top
+		text-align: center
+		position: relative
+		margin-bottom: 66px
+		&:nth-child(3n+1)
+			margin-left: 0
+			+breakpoint($break-1023)
+				margin-left: 20px
+			+breakpoint($break-767)
+				margin-left: 0
+		+breakpoint($break-1023)
+			width: 48%
+			&:nth-child(2n+1)
+				margin-left: 0
+		+breakpoint($break-767)
+			width: 100%
+			margin-left: 0
+			margin-bottom: 20px
+		a 
+			display: inline-block
+		h4 
+			color: #64625d
+			font-size: 20px
+			line-height: 24px
+			+transition(0.3s)
+			text-transform: uppercase
+			margin-top: 32px
+			letter-spacing: 1.1px
+			+breakpoint($break-767)
+				margin-top: 15px
+		.menu-price
+			color: #64625d
+			font-size: 20px
+			line-height: 24px
+			+transition(0.3s)
+			letter-spacing: 1.1px
+			text-transform: uppercase
+			font-weight: bold
+			font-style: normal
+			margin-top: 15px
+			margin-bottom: 10px
+		.image-container
+			position: relative
+			img 
+				width: 100%
+				display: block
+		.menu-img-text
+			background: rgba(#000, 0.8)
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			overflow: auto
+			height: 100%
+			+box-sizing(border-box)
+			padding: 0px 25px
+			+opacity(0)
+			+transition(0.3s)
+			font-size: 0
+			line-height: 0
+			+breakpoint($break-1023)
+				padding: 0px 13px
+			&:before
+				content: ""
+				width: 0
+				height: 100%
+				display: inline-block
+				vertical-align: bottom
+		.menu-img-text-container
+			display: inline-block
+			vertical-align: bottom
+			font-size: 16px
+			line-height: 22px
+			color: #fff
+			font-weight: normal
+			padding-bottom: 8px
+			padding-top: 10px
+			ul 
+				padding: 0px 0px
+			p 
+				letter-spacing: 0.3px
+				border-bottom: 1px solid #666563
+				padding: 0 0px 29px
+				margin-bottom: 37px
+			li
+				letter-spacing: 1px
+				font-style: italic
+				margin-bottom: 8px
+				display: inline-block
+				&:before
+					content: "-"
+					margin: 0px 3px
+				&:first-child
+					&:before 
+						display: none
+		&:nth-child(6)
+			.menu-img-text
+				background: rgba(#000, 0)
+				padding: 0
+				width: 100%
+				display: inline-block
+				text-align: center
+				vertical-align: top
+				p
+					color: #2f2f2f
+					padding: 0
+					margin-top: 0
+					border-bottom: 1px solid #d2d0ce
+					font-size: 18px
+					display: inline-block
+					line-height: 20px
+					letter-spacing: 1.8px
+					text-transform: uppercase
+					position: absolute
+					top: 50%
+					left: 52px
+					margin-top: -11px
+		&:hover
+			h4
+				color: #121110
+			h6
+				color: #121110
+			.menu-img-text
+				+opacity(1)
+				p
+					color: #fff
+			&:nth-child(6)
+				.menu-img-text
+					p
+						color: #2f2f2f
+

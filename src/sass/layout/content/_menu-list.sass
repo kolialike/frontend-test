@@ -1,0 +1,97 @@
+.menu-list
+	width: 0
+	height: 0
+	overflow: hidden
+	+opacity(0)
+	+transition(0.5s opacity)
+	&.open
+		width: 100%
+		height: auto
+		+opacity(1)
+	.menu-item
+		width: 100%
+		display: block
+		text-align: left
+		+clearfix
+		padding-bottom: 28px
+		border-bottom: 1px solid #bebcba
+		margin-bottom: 18px
+		+breakpoint($break-767)
+			padding-bottom: 18px
+		img 
+			float: left
+			margin-right: 16px
+			width: 280px
+			height: 185px
+			+breakpoint($break-767)
+				float: none
+				width: 100%
+				height: auto 
+				display: block
+				margin-right: 0
+		a 
+			width: 100%
+		h4
+			font-size: 24px 
+			color: #64625d
+			text-transform: uppercase
+			display: inline-block
+			+transition(0.3s)
+			margin-top: 7px
+			letter-spacing: 2px
+		.menu-price
+			color: #69b540
+			font-size: 24px
+			float: right
+			text-transform: uppercase
+			letter-spacing: 1.3px
+			padding-top: 7px
+			+breakpoint($break-479)
+				float: none
+		.menu-img-text
+			position: static
+			+opacity(1)
+			display: block
+			margin: 0
+			background: #fff
+			padding: 0
+			max-height: 500px
+			+clearfix
+			p 
+				padding: 24px 0 55px
+				font-size: 18px
+				line-height: 24px
+				letter-spacing: 1.6px
+				color: #363533
+				border: none
+				+breakpoint($break-479)
+					padding: 15px 0
+			li 
+				color: #121110
+				padding-left: 0
+				float: left 
+				font-size: 16px
+				letter-spacing: 2px
+				&:before
+					content: "/"
+					margin: 0px 3px
+				&:first-child
+					&:before 
+						display: none
+		&:nth-child(6)
+			.menu-img-text
+				p 
+					padding: 0
+		&:hover
+			h4
+				color: #121110
+			.menu-img-text
+				+opacity(1)
+				p
+					color: #363533
+			&:nth-child(6)
+				.menu-img-text
+					p
+						color: #363533
+
+

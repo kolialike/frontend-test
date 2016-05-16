@@ -1,0 +1,109 @@
+.institution
+	+clearfix
+	margin-bottom: 50px
+	+breakpoint($break-767)
+		margin-bottom: 6px
+	h3
+		font-size: 49px
+		text-align: center
+		text-transform: uppercase
+		font-weight: bold
+		font-style: normal
+		margin-top: 49px
+		letter-spacing: 3px
+		+breakpoint($break-767)
+			font-size: 30px
+			margin-top: 15px
+
+.tee
+	text-align: center
+	position: relative
+	border-top: 1px solid #dbd8d6
+	margin: 36px 0 55px
+	z-index: 2
+	+breakpoint($break-767)
+		margin-bottom: 15px
+		margin-top: 25px
+	.tee-image
+		background: #fff
+		padding: 0 92px 0px 95px
+		position: absolute
+		left: 50%
+		top: -18px
+		margin-left: -106px
+		z-index: 3
+		display: inline-block
+
+.institution-other-pictures
+	width: 405px
+	float: left
+	margin-top: 28px
+	margin-right: 8px
+	font-size: 0
+	line-height: 0
+	+breakpoint($break-767)
+		margin-top: 20px
+		width: 100%
+		float: none
+		display: block 
+		margin-top: 5px
+		text-align: center
+
+	a 
+		position: relative
+		+clearfix
+		display: inline-block
+		margin-right: 20px
+		margin-top: 20px
+		+transition(0.3s)
+		+breakpoint($break-767)
+			width: 42%
+			margin: 20px 10px 0px
+		&:hover
+			.eay
+				+opacity(1)
+		.eay
+			background: rgba(#000, 0.8)
+			position: absolute
+			+opacity(0)
+			+transition(0.3s)
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			img
+				position: absolute
+				top: 50%
+				left: 50%
+				margin-left: -20px
+				margin-top: -11px
+			+breakpoint($break-767)
+				display: none
+
+.institution-text
+	margin-top: 65px
+	display: block
+	margin-bottom: 20px
+	+breakpoint($break-767)
+		margin-top: 10px
+	p 
+		font-size: 18px
+		line-height: 25px
+		margin-top: 25px
+		color: #221f1b
+		font-weight: normal
+		font-style: italic
+		letter-spacing: 0.7px
+		+breakpoint($break-1023)
+			margin-top: 10px
+		+breakpoint($break-767)
+			font-size: 14px
+			margin-top: 5px
+		strong
+			font-size: 20px
+			line-height: 25px
+			letter-spacing: 0.8px
+			font-weight: bold
+			font-style: italic
+			+breakpoint($break-767)
+				font-size: 16px

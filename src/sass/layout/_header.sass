@@ -1,0 +1,168 @@
+#header
+	text-align: right
+	background: image-url("header-bg-l.png") no-repeat top left  #f4f2ef, image-url("header-bg-r.png") no-repeat top right  #f4f2ef
+	+breakpoint($break-1200)
+		background: image-url("header-bg-l.png") 0 0 no-repeat #f4f2ef, image-url("header-bg-r.png") 700px 0 no-repeat #f4f2ef		
+	+breakpoint($break-1023)
+		background: image-url("header-bg-l.png") -300px 0 no-repeat #f4f2ef, image-url("header-bg-r.png") 560px 0 no-repeat #f4f2ef		
+	+breakpoint($break-767)
+		background: image-url("header-bg-l.png") -350px 0 no-repeat #f4f2ef, image-url("header-bg-r.png") 330px 0 no-repeat #f4f2ef	
+	+breakpoint($break-479)
+		background: image-url("header-bg-l.png") -350px 0 no-repeat #f4f2ef, image-url("header-bg-r.png") 230px 0 no-repeat #f4f2ef	
+	.header-menu
+		display: inline-block
+		padding: 50px 0px 20px
+		+breakpoint($break-1023)
+			display: none
+		li
+			float: left
+			margin-left: 63.4px
+			a 
+				font-family: 'Ubuntu', sans-serif
+				color: #3b342d
+				+transition(0.3s)
+				font-size: 17px
+				letter-spacing: 0.8px
+				line-height: 20px
+				position: relative
+				&:after
+					content: ""
+					width: 0
+					height: 1px
+					background: #69b540
+					position: absolute
+					+transition(0.3s)
+					z-index: 10
+					display: inline-block
+					bottom: -7px
+					left: 0
+			&:hover
+				a
+					color: #69b540
+					&:after
+						width: 100%
+
+.mobile-menu
+	position: fixed
+	width: 100%
+	height: 100%
+	top: 0
+	z-index: 89
+	left: -100%
+	background: rgba(#000, 0.5)
+	+opacity(0)
+	.mobile-menu-item
+		float: left
+		background: #fff
+		height: 100%
+		padding: 60px 20px 0px
+		+breakpoint($break-767)
+			padding-top: 40px
+		a 
+			font-family: 'Ubuntu', sans-serif
+			color: #3b342d
+			+transition(0.3s)
+			font-size: 17px
+			letter-spacing: 0.8px
+			line-height: 20px
+			position: relative
+			&:hover
+				color: #69b540
+
+.menu-burger
+	display: none
+	+transition(0.3s)
+	+breakpoint($break-1023)
+		display: inline-block
+		position: relative
+		float: left
+		margin-top: 20px
+		cursor: pointer
+		width: 40px
+		height: 16px
+		z-index: 90
+		+breakpoint($break-767)
+			width: 26px
+			height: 17px
+			margin-top: 15px
+			margin-left: 0px
+	.menu-burger-item
+		display: block
+		width: 100%
+		background: #4faa22
+		height: 5px
+		margin-top: -11px
+		+transition(0.3s)
+		+breakpoint($break-767)
+			height: 3px
+			margin-top: 7px
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			display: block
+			width: 100%
+			background: #4faa22
+			height: 5px
+			+breakpoint($break-767)
+				height: 3px
+		&:after
+			content: ""
+			position: absolute
+			bottom: 0
+			left: 0
+			display: block
+			width: 100%
+			background: #4faa22
+			height: 5px
+			+breakpoint($break-767)
+				height: 3px
+.mobile-menu-open
+	+transition(0.3s)
+	.mobile-menu
+		+transition(0.3s)
+		display: block
+		top: 0
+		left: 0
+		+opacity(1)
+		a 
+			font-size: 16px
+	.menu-burger
+		+transition(0.3s)
+		.menu-burger-item
+			+transition(0.3s)
+			+rotate(135deg)
+			margin-bottom: -3px
+			margin-top: 3px
+			&:after
+				display: none
+			&:before
+				+rotate(90deg)
+
+.banner
+	padding: 142px 0 173px
+	h3
+		font-size: 60px
+		line-height: 70px
+		color: #69b540
+		text-align: center
+		text-transform: uppercase
+		letter-spacing: 3.5px
+		font-weight: bold
+		font-style: normal
+		+breakpoint($break-767)
+			font-size: 26px
+			line-height: 30px
+
+		p 
+			font-size: 48px
+			line-height: 50px
+			color: #3b342d
+			margin-top: 13px
+			letter-spacing: 2.9px
+			font-weight: normal
+			+breakpoint($break-767)
+				font-size: 20px
+				line-height: 25px
+
