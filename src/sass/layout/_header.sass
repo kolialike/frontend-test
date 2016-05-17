@@ -1,14 +1,8 @@
 #header
 	text-align: right
-	background: image-url("header-bg-l.png") no-repeat top left  #f4f2ef, image-url("header-bg-r.png") no-repeat top right  #f4f2ef
-	+breakpoint($break-1200)
-		background: image-url("header-bg-l.png") 0 0 no-repeat #f4f2ef, image-url("header-bg-r.png") 700px 0 no-repeat #f4f2ef		
-	+breakpoint($break-1023)
-		background: image-url("header-bg-l.png") -300px 0 no-repeat #f4f2ef, image-url("header-bg-r.png") 560px 0 no-repeat #f4f2ef		
-	+breakpoint($break-767)
-		background: image-url("header-bg-l.png") -350px 0 no-repeat #f4f2ef, image-url("header-bg-r.png") 330px 0 no-repeat #f4f2ef	
-	+breakpoint($break-479)
-		background: image-url("header-bg-l.png") -350px 0 no-repeat #f4f2ef, image-url("header-bg-r.png") 230px 0 no-repeat #f4f2ef	
+	position: relative
+	overflow: hidden
+	background-color: #f4f2ef
 	.header-menu
 		display: inline-block
 		padding: 50px 0px 20px
@@ -41,7 +35,47 @@
 					color: #69b540
 					&:after
 						width: 100%
-
+.parallax	
+	position: absolute
+	top: 0
+	left: 50%
+	width: auto
+	height: 100%
+	z-index: 0
+	transform: translateX(-50%)
+	+breakpoint($break-1024)
+		transform: translateX(0)
+		left: 0
+		width: 100%
+		margin-left: 0 !important
+		overflow: hidden
+		&:before 
+			content: ""
+			background: image-url("parallax.png") no-repeat
+			background-position: -360px 0
+			background-size: auto 100%
+			position: absolute
+			left: 0
+			top: 0
+			height: 100%
+			width: 400px
+	+breakpoint($break-767)
+		&:before 
+			background-position: -400px 0
+			width: 140px
+	img 
+		max-width: none
+		margin-left: 200px
+		height: 100%
+		+breakpoint($break-1024)
+			margin-left: 0
+			float: right
+			margin-right: -600px	
+		+breakpoint($break-1023)
+			margin-right: -460px
+		+breakpoint($break-767)
+			margin-right: -530px
+	
 .mobile-menu
 	position: fixed
 	width: 100%

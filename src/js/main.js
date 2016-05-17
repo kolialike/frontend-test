@@ -16,6 +16,22 @@ jQuery(function($){
   	event.stopPropagation();
   });
 
+  //paralax
+    var header = $("#header");
+    var headerWidth = header.outerWidth();
+    var headerHeight = header.outerHeight();
+    var parallax = $(".parallax");
+    var coef = 20;
+    header.on('mousemove', function(event) {
+      var cordX = event.pageX - headerWidth/2;
+      var cordY = event.pageY - headerHeight/2;
+      parallax.css({
+        "marginLeft": -(cordX+cordY)/coef + "px"
+      })
+    });
+  
+
+
   // menu-list-tile
   var menuTileList = $(".menu-tile-list a");
   var menuTile = $("#menu-tile");
@@ -24,7 +40,6 @@ jQuery(function($){
   	event.preventDefault();
   	$(this).addClass('active').siblings().removeClass('active');
   	var index = menuTileList.index($(this));
-  	console.log(index);
   	if (index == 0) {
   		menuTile.addClass('open');
   		menuList.removeClass('open');
@@ -44,4 +59,15 @@ jQuery(function($){
 		event.preventDefault();
 		$(this).addClass("active").parent('li').siblings('li').children('a').removeClass('active');
 	});
+
+  //img-big-small
+  var institutionSmallPictures = $(".institution-small-pictures").find("a");
+  var institutionBigPictures = $(".institution-big-pictures").find("img");
+  institutionSmallPictures.on('click', function(event) {
+    event.preventDefault();
+    $(this).addClass('active').siblings().removeClass('active');
+    var index = institutionSmallPictures.index($(this));
+    institutionBigPictures.eq(index).addClass('active').siblings().removeClass('active');    
+  });
+
 });

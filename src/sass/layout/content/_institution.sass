@@ -33,8 +33,23 @@
 		margin-left: -106px
 		z-index: 3
 		display: inline-block
-
-.institution-other-pictures
+.institution-big-pictures
+	position: relative
+	overflow: hidden
+	img
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 1
+		width: 100%
+		display: block
+		+opacity(0)
+		+transition(0.3s)
+		&.active
+			position: relative
+			z-index: 2
+			+opacity(1)
+.institution-small-pictures
 	width: 405px
 	float: left
 	margin-top: 28px
@@ -59,6 +74,19 @@
 		+breakpoint($break-767)
 			width: 42%
 			margin: 20px 10px 0px
+		&:before 
+			content: ""
+			width: 100%
+			height: 100%
+			display: block
+			position: absolute
+			+box-sizing(border-box)
+			z-index: 2			
+			border: 0px solid #221f1d
+			+transition(0.3s)
+		&.active
+			&:before
+				border-width: 3px
 		&:hover
 			.eay
 				+opacity(1)
@@ -68,6 +96,7 @@
 			+opacity(0)
 			+transition(0.3s)
 			top: 0
+			z-index: 3
 			left: 0
 			width: 100%
 			height: 100%
